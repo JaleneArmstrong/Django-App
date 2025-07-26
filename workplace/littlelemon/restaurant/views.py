@@ -21,4 +21,6 @@ def book(request):
 
 # Add your code here to create new views
 def menu (request):
-    return render(request, 'menu.html')
+    menu_data = Menu.objects.all()
+    main_data = {"menu": menu_data}
+    return render(request, 'menu.html', {"menu": main_data})
